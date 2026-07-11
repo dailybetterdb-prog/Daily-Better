@@ -636,6 +636,85 @@
   }
   .confirm-banner a:hover, .confirm-banner button:hover { background: rgba(255,255,255,0.25); }
 
+  /* AUTH */
+  .nav-secondary {
+    background: transparent;
+    color: var(--black);
+    border: 1px solid var(--border);
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Geist', sans-serif;
+    padding: 7px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 10px;
+    letter-spacing: -0.2px;
+  }
+  .nav-secondary:hover { background: var(--cream); }
+  .nav-account { display: flex; align-items: center; gap: 10px; }
+  .nav-account-email {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    color: var(--gray);
+    display: none;
+  }
+  @media (max-width: 768px) { .nav-account-email { display: none !important; } }
+
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15,15,15,0.5);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal-overlay.show { display: flex; }
+  .modal-box {
+    background: #fff;
+    border-radius: 16px;
+    padding: 36px;
+    max-width: 360px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.2);
+  }
+  .modal-close {
+    position: absolute;
+    top: 16px; right: 16px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: var(--gray);
+    cursor: pointer;
+    line-height: 1;
+  }
+  .modal-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 24px;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+  }
+  .modal-sub { font-size: 13px; color: var(--gray); margin-bottom: 24px; line-height: 1.5; }
+  .modal-box input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Geist', sans-serif;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+  }
+  .modal-box input:focus { outline: none; border-color: var(--green); }
+  .modal-error { color: #c0392b; font-size: 12.5px; margin: -4px 0 12px; min-height: 0; }
+  .modal-switch { font-size: 12.5px; color: var(--gray); margin-top: 16px; text-align: center; }
+  .modal-switch button {
+    background: none; border: none; color: var(--green); cursor: pointer;
+    font-family: 'Geist', sans-serif; font-size: 12.5px; text-decoration: underline; padding: 0;
+  }
+
   /* MANAGE SUBSCRIPTION (footer) */
   .manage-link {
     background: none;
@@ -670,8 +749,30 @@
     <span class="nav-logo-text">Daily Better</span>
   </div>
   <span class="nav-price">CHF 4.90 / Monat</span>
-  <a href="#pricing" class="nav-cta">Jetzt abonnieren</a>
+  <div class="nav-account">
+    <span class="nav-account-email" id="nav-account-email"></span>
+    <button type="button" class="nav-secondary" id="login-nav-btn">Anmelden</button>
+    <button type="button" class="nav-secondary" id="manage-nav-btn" style="display:none;">Abo verwalten</button>
+    <button type="button" class="nav-secondary" id="logout-nav-btn" style="display:none;">Abmelden</button>
+    <a href="#pricing" class="nav-cta">Jetzt abonnieren</a>
+  </div>
 </nav>
+
+<!-- AUTH MODAL -->
+<div class="modal-overlay" id="auth-modal-overlay">
+  <div class="modal-box">
+    <button type="button" class="modal-close" id="auth-modal-close">&times;</button>
+    <div class="modal-title" id="auth-modal-title">Anmelden</div>
+    <div class="modal-sub" id="auth-modal-sub">Melde dich mit E-Mail und Passwort an, um dein Abo zu verwalten.</div>
+    <form id="auth-form">
+      <input type="email" id="auth-email" placeholder="E-Mail" autocomplete="email" required>
+      <input type="password" id="auth-password" placeholder="Passwort" autocomplete="current-password" minlength="8" required>
+      <div class="modal-error" id="auth-error"></div>
+      <button type="submit" class="btn-primary" id="auth-submit-btn" style="width:100%;">Anmelden</button>
+    </form>
+    <div class="modal-switch" id="auth-modal-switch"></div>
+  </div>
+</div>
 
 <!-- CONFIRMATION BANNER -->
 <div class="confirm-banner" id="confirm-banner">
@@ -874,13 +975,25 @@
   <span class="footer-disclaimer">Keine Anlageberatung</span>
 </footer>
 
-<script>
-  async function startCheckout(button) {
+<script type="module">
+  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+  const supabase = createClient(
+    'https://venwlaqhutywuvqcbntj.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZlbndsYXFodXR5d3V2cWNibnRqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM1MTA2ODksImV4cCI6MjA5OTA4NjY4OX0.aKmc9JLuTWUYYCH-xCHYLG7ufJysNi3pRP2OrdafumE'
+  );
+
+  // ---------- Checkout ----------
+  async function startCheckout(button, email) {
     const original = button.textContent;
     button.disabled = true;
     button.textContent = 'Einen Moment…';
     try {
-      const res = await fetch('/api/create-checkout-session', { method: 'POST' });
+      const res = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
       const data = await res.json();
       if (!res.ok || !data.url) throw new Error(data.error || 'Unbekannter Fehler');
       window.location.href = data.url;
@@ -892,16 +1005,30 @@
     }
   }
 
-  document.getElementById('checkout-btn').addEventListener('click', (e) => startCheckout(e.currentTarget));
+  document.getElementById('checkout-btn').addEventListener('click', async (e) => {
+    const { data: { session } } = await supabase.auth.getSession();
+    if (session?.user?.email) {
+      startCheckout(e.currentTarget, session.user.email);
+    } else {
+      openAuthModal('signup');
+    }
+  });
 
+  // ---------- Customer portal ----------
   async function openPortal(payload, triggerButton) {
     const original = triggerButton.textContent;
     triggerButton.disabled = true;
     triggerButton.textContent = 'Einen Moment…';
     try {
+      const headers = { 'Content-Type': 'application/json' };
+      if (!payload.sessionId) {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (!session) { openAuthModal('login'); triggerButton.disabled = false; triggerButton.textContent = original; return; }
+        headers['Authorization'] = `Bearer ${session.access_token}`;
+      }
       const res = await fetch('/api/create-portal-session', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers,
         body: JSON.stringify(payload)
       });
       const data = await res.json();
@@ -915,25 +1042,114 @@
     }
   }
 
-  document.getElementById('manage-subscription-link').addEventListener('click', (e) => {
-    const email = prompt('Mit welcher E-Mail-Adresse hast du dein Abo abgeschlossen?');
-    if (email) openPortal({ email }, e.currentTarget);
+  document.getElementById('manage-nav-btn').addEventListener('click', (e) => openPortal({}, e.currentTarget));
+  document.getElementById('manage-subscription-link').addEventListener('click', (e) => openPortal({}, e.currentTarget));
+
+  document.getElementById('logout-nav-btn').addEventListener('click', async () => {
+    await supabase.auth.signOut();
+    refreshAuthUI();
   });
 
+  // ---------- Auth modal ----------
+  let authMode = 'login';
+  const overlay = document.getElementById('auth-modal-overlay');
+  const title = document.getElementById('auth-modal-title');
+  const sub = document.getElementById('auth-modal-sub');
+  const submitBtn = document.getElementById('auth-submit-btn');
+  const switchEl = document.getElementById('auth-modal-switch');
+  const errorEl = document.getElementById('auth-error');
+
+  function openAuthModal(mode) {
+    authMode = mode;
+    errorEl.textContent = '';
+    document.getElementById('auth-form').reset();
+    if (mode === 'signup') {
+      title.textContent = 'Konto erstellen';
+      sub.textContent = 'Wähle ein Passwort — damit kannst du dein Abo später jederzeit verwalten oder kündigen.';
+      submitBtn.textContent = 'Weiter zur Zahlung';
+      switchEl.innerHTML = 'Schon ein Konto? <button type="button" id="auth-switch-btn">Anmelden</button>';
+    } else {
+      title.textContent = 'Anmelden';
+      sub.textContent = 'Melde dich mit E-Mail und Passwort an, um dein Abo zu verwalten.';
+      submitBtn.textContent = 'Anmelden';
+      switchEl.innerHTML = 'Noch kein Konto? <button type="button" id="auth-switch-btn">Abo abschliessen</button>';
+    }
+    document.getElementById('auth-switch-btn').addEventListener('click', () => openAuthModal(mode === 'signup' ? 'login' : 'signup'));
+    overlay.classList.add('show');
+  }
+
+  function closeAuthModal() { overlay.classList.remove('show'); }
+
+  document.getElementById('login-nav-btn').addEventListener('click', () => openAuthModal('login'));
+  document.getElementById('auth-modal-close').addEventListener('click', closeAuthModal);
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) closeAuthModal(); });
+
+  document.getElementById('auth-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    errorEl.textContent = '';
+    const email = document.getElementById('auth-email').value.trim();
+    const password = document.getElementById('auth-password').value;
+    submitBtn.disabled = true;
+
+    try {
+      if (authMode === 'signup') {
+        const { error } = await supabase.auth.signUp({ email, password });
+        if (error && !error.message.includes('already registered')) throw error;
+        closeAuthModal();
+        await startCheckout(document.getElementById('checkout-btn'), email);
+      } else {
+        const { error } = await supabase.auth.signInWithPassword({ email, password });
+        if (error) throw error;
+        closeAuthModal();
+        refreshAuthUI();
+      }
+    } catch (err) {
+      errorEl.textContent = err.message === 'Invalid login credentials'
+        ? 'E-Mail oder Passwort falsch.'
+        : err.message;
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+
+  async function refreshAuthUI() {
+    const { data: { session } } = await supabase.auth.getSession();
+    const emailEl = document.getElementById('nav-account-email');
+    const loginBtn = document.getElementById('login-nav-btn');
+    const manageBtn = document.getElementById('manage-nav-btn');
+    const logoutBtn = document.getElementById('logout-nav-btn');
+
+    if (session?.user?.email) {
+      emailEl.textContent = session.user.email;
+      emailEl.style.display = 'inline';
+      loginBtn.style.display = 'none';
+      manageBtn.style.display = 'inline-block';
+      logoutBtn.style.display = 'inline-block';
+    } else {
+      emailEl.style.display = 'none';
+      loginBtn.style.display = 'inline-block';
+      manageBtn.style.display = 'none';
+      logoutBtn.style.display = 'none';
+    }
+  }
+
+  refreshAuthUI();
+
+  // ---------- Post-checkout confirmation ----------
   const params = new URLSearchParams(window.location.search);
   const note = document.getElementById('pricing-note');
   const banner = document.getElementById('confirm-banner');
   const bannerText = document.getElementById('confirm-banner-text');
-  const sessionId = params.get('session_id');
+  const sessionIdParam = params.get('session_id');
 
   if (params.get('checkout') === 'success') {
     note.textContent = 'Danke für dein Abo! Der erste Newsletter kommt morgen früh um 07:00 Uhr.';
     bannerText.textContent = '✓ Zahlung erfolgreich — dein Abo ist aktiv.';
     banner.classList.add('show');
     document.getElementById('manage-from-banner').addEventListener('click', (e) => {
-      if (sessionId) openPortal({ sessionId }, e.currentTarget);
+      if (sessionIdParam) openPortal({ sessionId: sessionIdParam }, e.currentTarget);
     });
-    if (!sessionId) document.getElementById('manage-from-banner').style.display = 'none';
+    if (!sessionIdParam) document.getElementById('manage-from-banner').style.display = 'none';
   } else if (params.get('checkout') === 'canceled') {
     note.textContent = 'Checkout abgebrochen — du kannst es jederzeit erneut versuchen.';
   }

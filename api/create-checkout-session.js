@@ -9,6 +9,7 @@ export default async function handler(req, res) {
   }
 
   const origin = req.headers.origin || process.env.PUBLIC_URL || "https://daily-better-jade.vercel.app";
+  const { email } = req.body ?? {};
 
   try {
     const session = await stripe.checkout.sessions.create({
@@ -17,6 +18,7 @@ export default async function handler(req, res) {
       success_url: `${origin}/?checkout=success&session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/?checkout=canceled`,
       allow_promotion_codes: true,
+      ...(email ? { customer_email: email } : {}),
     });
 
     res.status(200).json({ url: session.url });
