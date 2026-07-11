@@ -39,7 +39,7 @@ export default async function handler(req, res) {
         const email = session.customer_details?.email ?? session.customer_email;
         const subscription = await stripe.subscriptions.retrieve(session.subscription);
 
-        await supabase.from("subscribers").upsert(
+        const { error: upsertError } = await supabase.from("subscribers").upsert(
           {
             email,
             stripe_customer_id: session.customer,
@@ -51,12 +51,13 @@ export default async function handler(req, res) {
           },
           { onConflict: "email" }
         );
+        if (upsertError) throw new Error(`Supabase upsert failed: ${upsertError.message}`);
         break;
       }
 
       case "customer.subscription.updated": {
         const subscription = event.data.object;
-        await supabase
+        const { error: updateError } = await supabase
           .from("subscribers")
           .update({
             active: subscription.status === "active" || subscription.status === "trialing",
@@ -64,15 +65,17 @@ export default async function handler(req, res) {
             updated_at: new Date().toISOString(),
           })
           .eq("stripe_subscription_id", subscription.id);
+        if (updateError) throw new Error(`Supabase update failed: ${updateError.message}`);
         break;
       }
 
       case "customer.subscription.deleted": {
         const subscription = event.data.object;
-        await supabase
+        const { error: deleteError } = await supabase
           .from("subscribers")
           .update({ active: false, updated_at: new Date().toISOString() })
           .eq("stripe_subscription_id", subscription.id);
+        if (deleteError) throw new Error(`Supabase update failed: ${deleteError.message}`);
         break;
       }
 
