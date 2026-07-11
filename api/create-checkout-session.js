@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const origin = req.headers.origin || process.env.PUBLIC_URL;
+  const origin = req.headers.origin || process.env.PUBLIC_URL || "https://daily-better-jade.vercel.app";
 
   try {
     const session = await stripe.checkout.sessions.create({
