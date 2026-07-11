@@ -610,6 +610,46 @@
     to { transform: translateX(-50%); }
   }
 
+  /* CONFIRMATION BANNER */
+  .confirm-banner {
+    display: none;
+    background: var(--green);
+    color: #fff;
+    padding: 14px 24px;
+    text-align: center;
+    font-size: 14px;
+    position: sticky;
+    top: 60px;
+    z-index: 90;
+  }
+  .confirm-banner.show { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+  .confirm-banner a, .confirm-banner button {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Geist', sans-serif;
+  }
+  .confirm-banner a:hover, .confirm-banner button:hover { background: rgba(255,255,255,0.25); }
+
+  /* MANAGE SUBSCRIPTION (footer) */
+  .manage-link {
+    background: none;
+    border: none;
+    font-family: 'Geist Mono', monospace;
+    font-size: 10px;
+    color: #bbb;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    padding: 0;
+  }
+  .manage-link:hover { color: #888; }
+
   /* MOBILE */
   @media (max-width: 768px) {
     nav { padding: 0 20px; }
@@ -632,6 +672,12 @@
   <span class="nav-price">CHF 4.90 / Monat</span>
   <a href="#pricing" class="nav-cta">Jetzt abonnieren</a>
 </nav>
+
+<!-- CONFIRMATION BANNER -->
+<div class="confirm-banner" id="confirm-banner">
+  <span id="confirm-banner-text"></span>
+  <button type="button" id="manage-from-banner">Abo verwalten</button>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -823,7 +869,7 @@
   <div class="footer-links">
     <a href="#">Datenschutz</a>
     <a href="#">Impressum</a>
-    <a href="#">Abmelden</a>
+    <button type="button" class="manage-link" id="manage-subscription-link">Abo verwalten / kündigen</button>
   </div>
   <span class="footer-disclaimer">Keine Anlageberatung</span>
 </footer>
@@ -848,10 +894,46 @@
 
   document.getElementById('checkout-btn').addEventListener('click', (e) => startCheckout(e.currentTarget));
 
+  async function openPortal(payload, triggerButton) {
+    const original = triggerButton.textContent;
+    triggerButton.disabled = true;
+    triggerButton.textContent = 'Einen Moment…';
+    try {
+      const res = await fetch('/api/create-portal-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+      if (!res.ok || !data.url) throw new Error(data.error || 'Unbekannter Fehler');
+      window.location.href = data.url;
+    } catch (err) {
+      console.error(err);
+      alert('Kundenportal konnte nicht geöffnet werden: ' + err.message);
+      triggerButton.disabled = false;
+      triggerButton.textContent = original;
+    }
+  }
+
+  document.getElementById('manage-subscription-link').addEventListener('click', (e) => {
+    const email = prompt('Mit welcher E-Mail-Adresse hast du dein Abo abgeschlossen?');
+    if (email) openPortal({ email }, e.currentTarget);
+  });
+
   const params = new URLSearchParams(window.location.search);
   const note = document.getElementById('pricing-note');
+  const banner = document.getElementById('confirm-banner');
+  const bannerText = document.getElementById('confirm-banner-text');
+  const sessionId = params.get('session_id');
+
   if (params.get('checkout') === 'success') {
     note.textContent = 'Danke für dein Abo! Der erste Newsletter kommt morgen früh um 07:00 Uhr.';
+    bannerText.textContent = '✓ Zahlung erfolgreich — dein Abo ist aktiv.';
+    banner.classList.add('show');
+    document.getElementById('manage-from-banner').addEventListener('click', (e) => {
+      if (sessionId) openPortal({ sessionId }, e.currentTarget);
+    });
+    if (!sessionId) document.getElementById('manage-from-banner').style.display = 'none';
   } else if (params.get('checkout') === 'canceled') {
     note.textContent = 'Checkout abgebrochen — du kannst es jederzeit erneut versuchen.';
   }
