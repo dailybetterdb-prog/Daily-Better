@@ -538,13 +538,17 @@
     color: var(--black);
     font-size: 14px;
     font-weight: 600;
+    font-family: 'Geist', sans-serif;
     padding: 16px;
+    border: none;
     border-radius: 10px;
     text-decoration: none;
+    cursor: pointer;
     transition: opacity 0.2s, transform 0.2s;
     letter-spacing: -0.3px;
   }
   .btn-pricing:hover { opacity: 0.9; transform: translateY(-1px); }
+  .btn-pricing:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
   .pricing-note {
     margin-top: 16px;
     font-family: 'Geist Mono', monospace;
@@ -780,8 +784,8 @@
       <li>Tipp des Tages</li>
       <li>Jederzeit kündbar</li>
     </ul>
-    <a href="#" class="btn-pricing">Jetzt abonnieren</a>
-    <p class="pricing-note">Kein Abo-Risiko · Sofort kündbar · Keine versteckten Kosten</p>
+    <button type="button" id="checkout-btn" class="btn-pricing">Jetzt abonnieren</button>
+    <p class="pricing-note" id="pricing-note">Kein Abo-Risiko · Sofort kündbar · Keine versteckten Kosten</p>
   </div>
 </section>
 
@@ -823,6 +827,35 @@
   </div>
   <span class="footer-disclaimer">Keine Anlageberatung</span>
 </footer>
+
+<script>
+  async function startCheckout(button) {
+    const original = button.textContent;
+    button.disabled = true;
+    button.textContent = 'Einen Moment…';
+    try {
+      const res = await fetch('/api/create-checkout-session', { method: 'POST' });
+      const data = await res.json();
+      if (!res.ok || !data.url) throw new Error(data.error || 'Unbekannter Fehler');
+      window.location.href = data.url;
+    } catch (err) {
+      console.error(err);
+      alert('Checkout konnte nicht gestartet werden. Bitte versuch es später erneut.');
+      button.disabled = false;
+      button.textContent = original;
+    }
+  }
+
+  document.getElementById('checkout-btn').addEventListener('click', (e) => startCheckout(e.currentTarget));
+
+  const params = new URLSearchParams(window.location.search);
+  const note = document.getElementById('pricing-note');
+  if (params.get('checkout') === 'success') {
+    note.textContent = 'Danke für dein Abo! Der erste Newsletter kommt morgen früh um 07:00 Uhr.';
+  } else if (params.get('checkout') === 'canceled') {
+    note.textContent = 'Checkout abgebrochen — du kannst es jederzeit erneut versuchen.';
+  }
+</script>
 
 </body>
 </html>
