@@ -3,7 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Better — Dein tägliches Aktien-Briefing</title>
+<title>Daily Better – Der tägliche Schweizer Vorsorge-Newsletter</title>
+<meta name="description" content="Erhalte jeden Morgen um 7 Uhr einen verständlichen Vorsorge-Tipp zu Säule 3a, Pensionskasse, AHV, Steuern und langfristigem Vermögensaufbau.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Daily Better – Der tägliche Schweizer Vorsorge-Newsletter">
+<meta property="og:description" content="Jeden Morgen um 7 Uhr ein verständlicher Vorsorge-Tipp für deine finanzielle Zukunft. Säule 3a, Pensionskasse, AHV, Steuern und mehr.">
+<meta property="og:url" content="https://dailybetter.online">
+<meta property="og:image" content="https://dailybetter.online/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Daily Better – Der tägliche Schweizer Vorsorge-Newsletter">
+<meta name="twitter:description" content="Jeden Morgen um 7 Uhr ein verständlicher Vorsorge-Tipp für deine finanzielle Zukunft.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -760,6 +769,7 @@
     <span class="nav-logo-text">Daily Better</span>
   </div>
   <span class="nav-price">CHF 4.90 / Monat</span>
+  <!-- Preis stammt aus dem bestehenden Stripe-Abo (STRIPE_PRICE_ID); hier nur Anzeige -->
   <div class="nav-account">
     <span class="nav-account-email" id="nav-account-email"></span>
     <button type="button" class="nav-secondary" id="login-nav-btn">Anmelden</button>
@@ -798,16 +808,17 @@
     Täglich um 07:00 Uhr in deinem Postfach
   </div>
   <h1 class="hero-title">
-    Smarter investieren —<br>
-    <em>jeden Morgen neu</em>
+    Deine Vorsorge.<br>
+    <em>Jeden Tag ein bisschen besser.</em>
   </h1>
   <p class="hero-sub">
-    Dein tägliches Aktien-Briefing. Marktüberblick, Top-Aktien, Risiken und ein Tipp des Tages — kompakt und verständlich.
+    Erhalte jeden Morgen um 7 Uhr einen verständlichen Schweizer Vorsorge-Tipp, einen fundierten Artikel und ausgewählte Ideen für den langfristigen Vermögensaufbau.
   </p>
   <div class="hero-cta-group">
-    <a href="#pricing" class="btn-primary">Jetzt abonnieren</a>
-    <span class="btn-price">CHF 4.90 / Monat · Jederzeit kündbar</span>
+    <a href="#pricing" class="btn-primary">Daily Better abonnieren</a>
+    <a href="#preview" class="btn-primary" style="background:transparent;color:var(--black);border:1px solid var(--border);box-shadow:none;">Beispielausgabe ansehen</a>
   </div>
+  <p class="btn-price" style="margin-top:24px;">Verständlich erklärt · Auf die Schweiz ausgerichtet · Jederzeit kündbar</p>
   <div class="hero-social-proof">
     <div class="proof-item">
       <span class="proof-num">07:00</span>
@@ -815,8 +826,8 @@
     </div>
     <div class="proof-divider"></div>
     <div class="proof-item">
-      <span class="proof-num">4</span>
-      <span class="proof-label">Rubriken</span>
+      <span class="proof-num">7</span>
+      <span class="proof-label">Themenbereiche</span>
     </div>
     <div class="proof-divider"></div>
     <div class="proof-item">
@@ -826,38 +837,77 @@
   </div>
 </section>
 
-<!-- TICKER -->
+<!-- TICKER: wöchentliche Themenrotation -->
 <div class="ticker-section">
   <div class="ticker-track">
-    <div class="ticker-item"><span class="ticker-name">SMI</span><span class="ticker-val">11'842</span><span class="ticker-chg tup">▲ +0.84%</span></div>
-    <div class="ticker-item"><span class="ticker-name">DAX</span><span class="ticker-val">18'621</span><span class="ticker-chg tup">▲ +1.12%</span></div>
-    <div class="ticker-item"><span class="ticker-name">S&P 500</span><span class="ticker-val">5'309</span><span class="ticker-chg tdn">▼ −0.31%</span></div>
-    <div class="ticker-item"><span class="ticker-name">NASDAQ</span><span class="ticker-val">16'780</span><span class="ticker-chg tup">▲ +0.56%</span></div>
-    <div class="ticker-item"><span class="ticker-name">BTC</span><span class="ticker-val">$97'400</span><span class="ticker-chg tup">▲ +2.1%</span></div>
-    <div class="ticker-item"><span class="ticker-name">NVDA</span><span class="ticker-val">$1'087</span><span class="ticker-chg tup">▲ +3.2%</span></div>
-    <div class="ticker-item"><span class="ticker-name">NOVN</span><span class="ticker-val">CHF 94.20</span><span class="ticker-chg tup">▲ +0.4%</span></div>
-    <div class="ticker-item"><span class="ticker-name">TSLA</span><span class="ticker-val">$182.40</span><span class="ticker-chg tdn">▼ −1.2%</span></div>
+    <div class="ticker-item"><span class="ticker-name">MO</span><span class="ticker-val">Säule 3a</span></div>
+    <div class="ticker-item"><span class="ticker-name">DI</span><span class="ticker-val">Pensionskasse</span></div>
+    <div class="ticker-item"><span class="ticker-name">MI</span><span class="ticker-val">Steuern</span></div>
+    <div class="ticker-item"><span class="ticker-name">DO</span><span class="ticker-val">AHV</span></div>
+    <div class="ticker-item"><span class="ticker-name">FR</span><span class="ticker-val">ETFs & Vermögensaufbau</span></div>
+    <div class="ticker-item"><span class="ticker-name">SA</span><span class="ticker-val">Familie & Versicherung</span></div>
+    <div class="ticker-item"><span class="ticker-name">SO</span><span class="ticker-val">Pensionierungsplanung</span></div>
     <!-- Repeat for seamless loop -->
-    <div class="ticker-item"><span class="ticker-name">SMI</span><span class="ticker-val">11'842</span><span class="ticker-chg tup">▲ +0.84%</span></div>
-    <div class="ticker-item"><span class="ticker-name">DAX</span><span class="ticker-val">18'621</span><span class="ticker-chg tup">▲ +1.12%</span></div>
-    <div class="ticker-item"><span class="ticker-name">S&P 500</span><span class="ticker-val">5'309</span><span class="ticker-chg tdn">▼ −0.31%</span></div>
-    <div class="ticker-item"><span class="ticker-name">NASDAQ</span><span class="ticker-val">16'780</span><span class="ticker-chg tup">▲ +0.56%</span></div>
-    <div class="ticker-item"><span class="ticker-name">BTC</span><span class="ticker-val">$97'400</span><span class="ticker-chg tup">▲ +2.1%</span></div>
-    <div class="ticker-item"><span class="ticker-name">NVDA</span><span class="ticker-val">$1'087</span><span class="ticker-chg tup">▲ +3.2%</span></div>
-    <div class="ticker-item"><span class="ticker-name">NOVN</span><span class="ticker-val">CHF 94.20</span><span class="ticker-chg tup">▲ +0.4%</span></div>
-    <div class="ticker-item"><span class="ticker-name">TSLA</span><span class="ticker-val">$182.40</span><span class="ticker-chg tdn">▼ −1.2%</span></div>
+    <div class="ticker-item"><span class="ticker-name">MO</span><span class="ticker-val">Säule 3a</span></div>
+    <div class="ticker-item"><span class="ticker-name">DI</span><span class="ticker-val">Pensionskasse</span></div>
+    <div class="ticker-item"><span class="ticker-name">MI</span><span class="ticker-val">Steuern</span></div>
+    <div class="ticker-item"><span class="ticker-name">DO</span><span class="ticker-val">AHV</span></div>
+    <div class="ticker-item"><span class="ticker-name">FR</span><span class="ticker-val">ETFs & Vermögensaufbau</span></div>
+    <div class="ticker-item"><span class="ticker-name">SA</span><span class="ticker-val">Familie & Versicherung</span></div>
+    <div class="ticker-item"><span class="ticker-name">SO</span><span class="ticker-val">Pensionierungsplanung</span></div>
   </div>
 </div>
 
-<!-- PREVIEW -->
-<section class="preview-section">
-  <p class="section-label">Beispiel Newsletter</p>
-  <h2 class="section-title">So sieht dein <em>tägliches Briefing</em> aus</h2>
-  <p class="section-sub">Jeden Morgen um 07:00 Uhr — präzise, übersichtlich, direkt auf den Punkt.</p>
+<!-- PROBLEM -->
+<section class="features-section" style="text-align:center;padding-bottom:80px;">
+  <p class="section-label">Die Ausgangslage</p>
+  <h2 class="section-title">Vorsorge ist wichtig — <em>aber unnötig kompliziert.</em></h2>
+  <p class="section-sub">Die meisten Fragen zur eigenen Vorsorge bleiben unbeantwortet, weil die Antworten über Broschüren, Beraterinnen und Behörden verstreut sind.</p>
+  <div class="features-grid" style="text-align:left;max-width:900px;margin:0 auto;">
+    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;">Zahle ich genug in die Säule 3a ein?</p></div>
+    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;">Habe ich eine Vorsorgelücke?</p></div>
+    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;">Sollte ich freiwillig in meine Pensionskasse einzahlen?</p></div>
+    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;">Wie viel kosten mich die Gebühren meines Vorsorgeprodukts?</p></div>
+    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;">Sollte ich Kapital oder Rente beziehen?</p></div>
+    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;">Wie investiere ich langfristig, ohne unnötige Risiken einzugehen?</p></div>
+  </div>
+  <p class="section-sub" style="margin-top:56px;margin-bottom:0;">Daily Better erklärt dir jeden Tag genau ein Thema — verständlich, kompakt und ohne unnötigen Fachjargon.</p>
+</section>
+
+<!-- SO FUNKTIONIERT'S -->
+<section class="features-section">
+  <div class="features-header">
+    <p class="section-label">Ablauf</p>
+    <h2 class="section-title">So funktioniert <em>Daily Better</em></h2>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">⏰</div>
+      <div class="feature-title">Jeden Morgen um 7 Uhr</div>
+      <p class="feature-desc">Eine neue Ausgabe wird täglich direkt per E-Mail verschickt — pünktlich, egal ob Sommer- oder Winterzeit.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💡</div>
+      <div class="feature-title">In wenigen Minuten verstanden</div>
+      <p class="feature-desc">Komplexe Schweizer Vorsorgethemen werden einfach und verständlich erklärt — ohne unnötigen Fachjargon.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">✓</div>
+      <div class="feature-title">Ein konkreter nächster Schritt</div>
+      <p class="feature-desc">Jede Ausgabe enthält eine kleine Aufgabe, die du direkt umsetzen kannst — in rund 5 Minuten.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PREVIEW / BEISPIELAUSGABE -->
+<section class="preview-section" id="preview">
+  <p class="section-label">Beispielausgabe</p>
+  <h2 class="section-title">So sieht deine <em>tägliche Ausgabe</em> aus</h2>
+  <p class="section-sub">Jeden Morgen um 7 Uhr: das Wichtigste in 30 Sekunden, ein fundierter Artikel, ein Vorsorge-Tipp und ein konkreter Schritt für heute.</p>
 
   <div class="newsletter-preview">
     <div class="preview-topbar">
-      <span>Montag, 11. Mai 2026</span>
+      <span>Montag, 12. Januar 2026</span>
       <span class="live">● Live</span>
     </div>
     <div class="preview-header">
@@ -865,85 +915,127 @@
         <div class="preview-logo">DB</div>
         <span class="preview-brand">Daily Better</span>
         <span style="color:#ddd;margin:0 4px;">·</span>
-        <span class="preview-issue">Ausgabe #143</span>
+        <span class="preview-issue">Säule 3a</span>
       </div>
-      <div class="preview-title">Märkte im Aufwind —<br><em>was du heute wissen musst</em></div>
-      <p class="preview-intro">Guten Morgen. Die europäischen Börsen starten positiv. SMI und DAX im Plus, der S&P 500 zeigt leichte Schwäche nach gemischten Tech-Zahlen.</p>
+      <div class="preview-title">Warum ein Unterschied von 1 % bei den <em>Gebühren so viel ausmachen kann</em></div>
+      <p class="preview-intro">Guten Morgen. Ein scheinbar kleiner Unterschied bei den Gebühren deines Vorsorgeprodukts kann sich über Jahrzehnte zu einem beachtlichen Betrag summieren. Eine Beispielrechnung macht das greifbar.</p>
     </div>
     <div class="preview-ticker">
-      <div class="pt-item"><div class="pt-label">SMI</div><div class="pt-val">11'842</div><div class="pt-chg green">▲ +0.84%</div></div>
-      <div class="pt-item"><div class="pt-label">DAX</div><div class="pt-val">18'621</div><div class="pt-chg green">▲ +1.12%</div></div>
-      <div class="pt-item"><div class="pt-label">S&P 500</div><div class="pt-val">5'309</div><div class="pt-chg red">▼ −0.31%</div></div>
-      <div class="pt-item"><div class="pt-label">BTC</div><div class="pt-val">$97'400</div><div class="pt-chg green">▲ +2.1%</div></div>
+      <div class="pt-item"><div class="pt-label">Produkt A</div><div class="pt-val">TER 0.20%</div></div>
+      <div class="pt-item"><div class="pt-label">Produkt B</div><div class="pt-val">TER 1.20%</div></div>
+      <div class="pt-item"><div class="pt-label">Unterschied</div><div class="pt-val green">1.0%/Jahr</div></div>
+      <div class="pt-item"><div class="pt-label">Auf 30 Jahre</div><div class="pt-val green">deutlich spürbar</div></div>
     </div>
     <div class="preview-body">
-      <div class="preview-section-label">01 — Marktüberblick</div>
-      <div class="preview-section-title">Europäische Märkte nach Fed-Signal</div>
-      <p class="preview-text">Der SMI gewinnt 0.84% und testet die 11'900er Marke. Der DAX profitiert von starken Industriedaten aus Deutschland...</p>
+      <div class="preview-section-label">Artikel des Tages</div>
+      <div class="preview-section-title">Der unterschätzte Einfluss von Gebühren</div>
+      <p class="preview-text">Ob 3a-Fonds, Vorsorgestiftung oder ETF-Sparplan — die jährliche Gebühr wirkt unscheinbar, entfaltet über Jahrzehnte aber einen spürbaren Zinseszins-Effekt auf dein Vorsorgevermögen...</p>
     </div>
     <div class="preview-blur">
-      <span class="preview-blur-text">Abonnieren für den vollen Newsletter</span>
+      <span class="preview-blur-text">Abonnieren für die vollständige Ausgabe</span>
     </div>
   </div>
 </section>
 
-<!-- FEATURES -->
+<!-- THEMENÜBERSICHT -->
 <section class="features-section">
   <div class="features-header">
-    <p class="section-label">Was du bekommst</p>
-    <h2 class="section-title">Alles was du <em>täglich brauchst</em></h2>
+    <p class="section-label">Themen</p>
+    <h2 class="section-title">Diese Bereiche <em>deckt Daily Better ab</em></h2>
   </div>
-  <div class="features-grid">
+  <div class="features-grid" style="grid-template-columns: repeat(4, 1fr);">
     <div class="feature-card">
-      <div class="feature-icon">📊</div>
-      <div class="feature-title">Marktüberblick</div>
-      <p class="feature-desc">SMI, DAX, S&P 500 und Bitcoin auf einen Blick — mit Analyse was die Märkte bewegt.</p>
+      <div class="feature-icon">🏦</div>
+      <div class="feature-title">Säule 3a</div>
+      <p class="feature-desc">Freiwillig sparen mit Steuervorteil — und typische Fallstricke vermeiden.</p>
     </div>
     <div class="feature-card">
-      <div class="feature-icon">🔥</div>
-      <div class="feature-title">Top 3 Aktien</div>
-      <p class="feature-desc">Jeden Tag 3 Aktien im Fokus mit kurzer Analyse und klarer Einschätzung: Kaufen, Beobachten oder Vorsicht.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">⚠️</div>
-      <div class="feature-title">Risiken & Warnsignale</div>
-      <p class="feature-desc">Die wichtigsten Risiken des Tages — damit du weisst was du im Auge behalten solltest.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">💡</div>
-      <div class="feature-title">Tipp des Tages</div>
-      <p class="feature-desc">Ein täglicher Investment-Insight der dir hilft langfristig besser zu investieren.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">⏰</div>
-      <div class="feature-title">Täglich um 07:00 Uhr</div>
-      <p class="feature-desc">Pünktlich jeden Morgen in deinem Postfach — bevor die Märkte öffnen.</p>
+      <div class="feature-icon">📋</div>
+      <div class="feature-title">Pensionskasse</div>
+      <p class="feature-desc">Deinen Vorsorgeausweis verstehen und wissen, welche Optionen du hast.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">🇨🇭</div>
-      <div class="feature-title">Schweizer Fokus</div>
-      <p class="feature-desc">SMI und Schweizer Aktien immer im Fokus — perfekt für Schweizer Anleger.</p>
+      <div class="feature-title">AHV</div>
+      <p class="feature-desc">Die staatliche Vorsorge und was sie für deine Rente tatsächlich bedeutet.</p>
     </div>
+    <div class="feature-card">
+      <div class="feature-icon">📄</div>
+      <div class="feature-title">Steuern</div>
+      <p class="feature-desc">Abzüge und Optimierungsmöglichkeiten rund um deine Vorsorge.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🧭</div>
+      <div class="feature-title">Pensionierungsplanung</div>
+      <p class="feature-desc">Frühpensionierung, Kapitalbezug oder Rente — rechtzeitig vorbereitet entscheiden.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📈</div>
+      <div class="feature-title">ETFs & Vermögensaufbau</div>
+      <p class="feature-desc">Langfristig und kostenbewusst investieren, ohne unnötige Risiken.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💰</div>
+      <div class="feature-title">Gebühren & Kosten</div>
+      <p class="feature-desc">Versteckte Kosten bei Vorsorge- und Anlageprodukten erkennen.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">👨‍👩‍👧</div>
+      <div class="feature-title">Familie & Absicherung</div>
+      <p class="feature-desc">Versicherungen, Begünstigung und Nachlass sinnvoll regeln.</p>
+    </div>
+  </div>
+</section>
+
+<!-- KONKRETER NUTZEN -->
+<section class="features-section" style="text-align:center;">
+  <div class="features-header">
+    <p class="section-label">Nutzen</p>
+    <h2 class="section-title">Was dir <em>Daily Better bringt</em></h2>
+  </div>
+  <div class="features-grid" style="text-align:left;">
+    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;">Du erkennst mögliche Vorsorgelücken früher.</p></div>
+    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;">Du verstehst unterschiedliche Vorsorgelösungen besser.</p></div>
+    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;">Du lernst, Gebühren und Risiken einzuschätzen.</p></div>
+    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;">Du bereitest dich besser auf Gespräche mit Banken, Versicherungen oder Vorsorgeberatern vor.</p></div>
+    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;">Du baust schrittweise Vorsorgewissen auf.</p></div>
+    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;">Du erhältst regelmässig konkrete Handlungsimpulse.</p></div>
   </div>
 </section>
 
 <!-- PRICING -->
 <section class="pricing-section" id="pricing">
-  <p class="pricing-label">Preis</p>
-  <h2 class="pricing-title">Einfach. <em>Günstig.</em> Täglich.</h2>
+  <p class="pricing-label">Abonnement</p>
+  <h2 class="pricing-title">Daily Better <em>Vorsorge</em></h2>
   <div class="pricing-card">
     <div class="pricing-amount"><sup>CHF</sup>4.90</div>
     <div class="pricing-period">Pro Monat · Jederzeit kündbar</div>
     <ul class="pricing-features">
-      <li>Täglicher Newsletter um 07:00 Uhr</li>
-      <li>Marktüberblick SMI, DAX, S&P 500</li>
-      <li>Top 3 Aktien mit Analyse</li>
-      <li>Risiken & Warnsignale</li>
-      <li>Tipp des Tages</li>
+      <li>Tägliche E-Mail um 7 Uhr</li>
+      <li>Täglich neuer Vorsorge-Tipp</li>
+      <li>Fundierter Vorsorgeartikel</li>
+      <li>Schweizer Vorsorgethemen</li>
+      <li>ETF- und Anlageideen</li>
+      <li>Verständliche Quellen</li>
       <li>Jederzeit kündbar</li>
     </ul>
-    <button type="button" id="checkout-btn" class="btn-pricing">Jetzt abonnieren</button>
-    <p class="pricing-note" id="pricing-note">Kein Abo-Risiko · Sofort kündbar · Keine versteckten Kosten</p>
+    <button type="button" id="checkout-btn" class="btn-pricing">Jetzt Daily Better abonnieren</button>
+    <p class="pricing-note" id="pricing-note">Sichere Zahlung · Jederzeit kündbar · Keine versteckten Gebühren</p>
+  </div>
+</section>
+
+<!-- VERTRAUEN & TRANSPARENZ -->
+<section class="features-section" style="text-align:center;">
+  <div class="features-header">
+    <p class="section-label">Transparenz</p>
+    <h2 class="section-title">Finanzwissen statt <em>Verkaufsdruck</em></h2>
+  </div>
+  <div class="features-grid" style="text-align:left;">
+    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;">Inhalte werden redaktionell und verständlich aufbereitet.</p></div>
+    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;">Risiken und Nachteile werden ebenfalls genannt.</p></div>
+    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;">Bezahlte Partnerschaften werden klar gekennzeichnet.</p></div>
+    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;">Es gibt keine garantierten Renditen.</p></div>
+    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;">Daily Better ersetzt keine individuelle Finanz-, Steuer- oder Rechtsberatung.</p></div>
   </div>
 </section>
 
@@ -954,25 +1046,45 @@
     <h2 class="section-title">Häufige <em>Fragen</em></h2>
   </div>
   <div class="faq-item">
-    <div class="faq-q">Wann erhalte ich den Newsletter?</div>
-    <p class="faq-a">Täglich um 07:00 Uhr morgens — pünktlich bevor die Börsen öffnen.</p>
+    <div class="faq-q">Für wen ist Daily Better geeignet?</div>
+    <p class="faq-a">Für berufstätige Menschen in der Schweiz, etwa zwischen 30 und 60 Jahren, die ihre Vorsorge besser verstehen und langfristig bessere finanzielle Entscheidungen treffen möchten.</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Wann wird der Newsletter verschickt?</div>
+    <p class="faq-a">Täglich um 7:00 Uhr Schweizer Zeit — automatisch angepasst an Sommer- und Winterzeit.</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Sind die Inhalte auf die Schweiz ausgerichtet?</div>
+    <p class="faq-a">Ja. Säule 3a, Pensionskasse, AHV und Steuern werden im Schweizer Kontext erklärt, mit Verweis auf offizielle Schweizer Quellen.</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Erhalte ich individuelle Anlageberatung?</div>
+    <p class="faq-a">Nein. Daily Better dient der allgemeinen Information und Weiterbildung und ersetzt keine individuelle Anlage-, Vorsorge-, Steuer- oder Rechtsberatung.</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Sind die ETF- und Anlageideen persönliche Kaufempfehlungen?</div>
+    <p class="faq-a">Nein. Sie sind Beispiele zur eigenen Prüfung, inklusive Chancen und Risiken — keine individuelle Kaufempfehlung.</p>
   </div>
   <div class="faq-item">
     <div class="faq-q">Kann ich jederzeit kündigen?</div>
-    <p class="faq-a">Ja, du kannst jederzeit mit einem Klick kündigen. Keine Mindestlaufzeit, keine Kündigungsfristen.</p>
+    <p class="faq-a">Ja, du kannst dein Abo jederzeit mit wenigen Klicks über dein Konto kündigen. Keine Mindestlaufzeit, keine Kündigungsfristen.</p>
   </div>
   <div class="faq-item">
-    <div class="faq-q">Ist der Newsletter eine Anlageberatung?</div>
-    <p class="faq-a">Nein. Der Newsletter dient ausschliesslich zu Informationszwecken. Er stellt keine Anlageberatung dar.</p>
+    <div class="faq-q">Wie wird verhindert, dass sich Tipps wiederholen?</div>
+    <p class="faq-a">Jede Ausgabe wird vor dem Versand automatisch mit bisherigen Ausgaben abgeglichen, damit sich Themen, Tipps und Formulierungen nicht wiederholen.</p>
   </div>
   <div class="faq-item">
-    <div class="faq-q">Wie wird der Newsletter erstellt?</div>
-    <p class="faq-a">Der Newsletter analysiert täglich aktuelle Marktdaten und wird mithilfe von modernen Tools zusammengestellt.</p>
+    <div class="faq-q">Kann ich eine Beispielausgabe ansehen?</div>
+    <p class="faq-a">Ja, weiter oben auf dieser Seite findest du eine reale Beispielausgabe zum Thema Gebühren.</p>
   </div>
-  <div class="faq-item">
-    <div class="faq-q">Welche Märkte werden abgedeckt?</div>
-    <p class="faq-a">Primär SMI, DAX und S&P 500 — mit besonderem Fokus auf Schweizer und europäische Aktien.</p>
-  </div>
+</section>
+
+<!-- ABSCHLUSS -->
+<section class="pricing-section" style="padding:100px 24px;">
+  <p class="pricing-label">Loslegen</p>
+  <h2 class="pricing-title" style="margin-bottom:32px;">Deine finanzielle Zukunft <em>beginnt nicht irgendwann.</em></h2>
+  <p style="color:#999;font-size:15px;max-width:480px;margin:0 auto 40px;line-height:1.7;">Beginne heute damit, deine Vorsorge besser zu verstehen — jeden Morgen in wenigen Minuten.</p>
+  <a href="#pricing" class="btn-pricing" style="display:inline-block;width:auto;padding:16px 40px;text-decoration:none;">Daily Better abonnieren</a>
 </section>
 
 <!-- FOOTER -->
@@ -981,9 +1093,10 @@
   <div class="footer-links">
     <a href="#">Datenschutz</a>
     <a href="#">Impressum</a>
+    <a href="#">Kontakt</a>
     <button type="button" class="manage-link" id="manage-subscription-link">Abo verwalten / kündigen</button>
   </div>
-  <span class="footer-disclaimer">Keine Anlageberatung</span>
+  <span class="footer-disclaimer">Keine Anlage-, Vorsorge- oder Steuerberatung</span>
 </footer>
 
 <script type="module">
