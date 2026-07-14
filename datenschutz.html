@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datenschutz – Daily Better</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0f0f0f; --white: #fafaf8; --cream: #f4f1ec;
+    --green: #2d7a4a; --gray: #888; --border: #e8e4de;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--white); color: var(--black); font-family: 'Geist', sans-serif; -webkit-font-smoothing: antialiased; }
+  nav {
+    padding: 0 48px; height: 60px; display: flex; align-items: center; gap: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo-mark {
+    width: 28px; height: 28px; background: var(--black); border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Geist Mono', monospace; font-size: 10px; color: #3dff7a; font-weight: 500;
+  }
+  .nav-logo-text { font-size: 14px; font-weight: 600; }
+  a.back { margin-left: auto; font-size: 13px; color: var(--gray); text-decoration: none; }
+  main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+  h1 { font-family: 'Instrument Serif', serif; font-size: 40px; letter-spacing: -1px; margin-bottom: 16px; }
+  .updated { font-family: 'Geist Mono', monospace; font-size: 11px; color: var(--gray); margin-bottom: 40px; display: block; }
+  h2 { font-size: 16px; font-weight: 600; margin: 36px 0 12px; }
+  p, li { font-size: 14.5px; line-height: 1.8; color: #444; margin-bottom: 10px; }
+  ul { padding-left: 20px; margin-bottom: 10px; }
+  a { color: var(--green); }
+  @media (max-width: 640px) { nav { padding: 0 20px; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo-mark">DB</div>
+  <span class="nav-logo-text">Daily Better</span>
+  <a href="/" class="back">← Zurück zur Startseite</a>
+</nav>
+
+<main>
+  <h1>Datenschutzerklärung</h1>
+  <span class="updated">Stand: Juli 2026</span>
+
+  <p>Diese Datenschutzerklärung beschreibt, welche Personendaten Fiebig Newsletters (Einzelunternehmen), Roggenfarstrasse, 8193 Eglisau ("Daily Better", "wir") im Zusammenhang mit dieser Website und dem Newsletter-Abonnement bearbeitet.</p>
+
+  <h2>Welche Daten wir erheben</h2>
+  <ul>
+    <li>E-Mail-Adresse (für Kontoerstellung, Login und Newsletter-Versand)</li>
+    <li>Passwort (verschlüsselt gespeichert, für uns nicht einsehbar)</li>
+    <li>Abonnement- und Zahlungsstatus (aktiv/inaktiv, Zahlungsdaten selbst werden ausschliesslich von Stripe verarbeitet, nicht von uns gespeichert)</li>
+  </ul>
+
+  <h2>Wofür wir die Daten verwenden</h2>
+  <ul>
+    <li>Versand der täglichen Newsletter-Ausgabe</li>
+    <li>Verwaltung deines Kontos und Abonnements (Anmeldung, Kündigung)</li>
+    <li>Abwicklung der Zahlung über Stripe</li>
+  </ul>
+
+  <h2>Eingesetzte Dienstleister (Auftragsverarbeiter)</h2>
+  <ul>
+    <li><strong>Supabase</strong> – Datenbank und Authentifizierung (Kontoerstellung, Login, Speicherung der Abonnentendaten)</li>
+    <li><strong>Stripe</strong> – Zahlungsabwicklung und Abo-Verwaltung</li>
+    <li><strong>Resend</strong> – Versand der Newsletter-E-Mails</li>
+    <li><strong>Vercel</strong> – Hosting dieser Website</li>
+    <li><strong>Anthropic (Claude)</strong> – wird zur redaktionellen Aufbereitung der Newsletter-Inhalte eingesetzt; es werden dabei keine Kunden- oder Abonnentendaten an diesen Dienst übermittelt</li>
+  </ul>
+  <p>Diese Anbieter können Daten auch ausserhalb der Schweiz/EU verarbeiten. Wir achten bei der Auswahl auf Anbieter mit angemessenen Datenschutzstandards.</p>
+
+  <h2>Speicherdauer</h2>
+  <p>Wir speichern deine Daten, solange dein Konto bzw. Abonnement besteht. Nach Kündigung und Abmeldung werden keine weiteren Newsletter mehr versendet; eine vollständige Löschung auf Anfrage ist jederzeit möglich (siehe unten).</p>
+
+  <h2>Deine Rechte</h2>
+  <p>Du kannst jederzeit Auskunft über die zu deiner Person gespeicherten Daten verlangen, sie berichtigen oder löschen lassen und dein Abonnement kündigen. Wende dich dazu an <a href="mailto:dailybetter.db@gmail.com">dailybetter.db@gmail.com</a>. Vom Newsletter selbst kannst du dich zusätzlich jederzeit über den Abmeldelink in jeder E-Mail austragen.</p>
+
+  <h2>Cookies und lokale Speicherung</h2>
+  <p>Für die Anmeldung wird eine technisch notwendige Sitzungsinformation lokal in deinem Browser gespeichert (kein Tracking, kein Werbe-Cookie). Es werden keine Cookies zu Marketing- oder Analysezwecken Dritter eingesetzt.</p>
+
+  <h2>Kontakt</h2>
+  <p>Bei Fragen zum Datenschutz erreichst du uns unter <a href="mailto:dailybetter.db@gmail.com">dailybetter.db@gmail.com</a>.</p>
+</main>
+
+</body>
+</html>
