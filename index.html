@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Better – Dein täglicher Krypto-Newsletter</title>
-<meta name="description" content="Die wichtigsten Bewegungen, Chancen und Geschichten aus dem Kryptomarkt – jeden Morgen um 7 Uhr klar und verständlich eingeordnet.">
+<title>Daily Better – Your Daily Crypto Newsletter</title>
+<meta name="description" content="The most important moves, opportunities and stories from the crypto market – clearly filtered and explained every morning at 7am.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Daily Better – Weniger News. Mehr Klarheit.">
-<meta property="og:description" content="Die wichtigsten Bewegungen, Chancen und Geschichten aus dem Kryptomarkt – jeden Morgen um 7 Uhr klar und verständlich eingeordnet.">
+<meta property="og:title" content="Daily Better – Less noise. More clarity.">
+<meta property="og:description" content="The most important moves, opportunities and stories from the crypto market – clearly filtered and explained every morning at 7am.">
 <meta property="og:url" content="https://dailybetter.online">
 <meta property="og:image" content="https://dailybetter.online/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Daily Better – Weniger News. Mehr Klarheit.">
-<meta name="twitter:description" content="Die wichtigsten Bewegungen, Chancen und Geschichten aus dem Kryptomarkt – jeden Morgen um 7 Uhr.">
+<meta name="twitter:title" content="Daily Better – Less noise. More clarity.">
+<meta name="twitter:description" content="The most important moves, opportunities and stories from the crypto market – every morning at 7am.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -773,14 +773,14 @@
     <div class="nav-logo-mark">DB</div>
     <span class="nav-logo-text">Daily Better</span>
   </div>
-  <span class="nav-price">CHF 4.90 / Monat</span>
-  <!-- Preis stammt aus dem bestehenden Stripe-Abo (STRIPE_PRICE_ID); hier nur Anzeige -->
+  <span class="nav-price">CHF 4.90 / month</span>
+  <!-- Price comes from the existing Stripe subscription (STRIPE_PRICE_ID); display only -->
   <div class="nav-account">
     <span class="nav-account-email" id="nav-account-email"></span>
-    <button type="button" class="nav-secondary" id="login-nav-btn">Anmelden</button>
-    <button type="button" class="nav-secondary" id="manage-nav-btn" style="display:none;">Abo verwalten</button>
-    <button type="button" class="nav-secondary" id="logout-nav-btn" style="display:none;">Abmelden</button>
-    <a href="#pricing" class="nav-cta">Jetzt abonnieren</a>
+    <button type="button" class="nav-secondary" id="login-nav-btn">Log in</button>
+    <button type="button" class="nav-secondary" id="manage-nav-btn" style="display:none;">Manage subscription</button>
+    <button type="button" class="nav-secondary" id="logout-nav-btn" style="display:none;">Log out</button>
+    <a href="#pricing" class="nav-cta">Subscribe now</a>
   </div>
 </nav>
 
@@ -788,13 +788,13 @@
 <div class="modal-overlay" id="auth-modal-overlay">
   <div class="modal-box">
     <button type="button" class="modal-close" id="auth-modal-close">&times;</button>
-    <div class="modal-title" id="auth-modal-title">Anmelden</div>
-    <div class="modal-sub" id="auth-modal-sub">Melde dich mit E-Mail und Passwort an, um dein Abo zu verwalten.</div>
+    <div class="modal-title" id="auth-modal-title">Log in</div>
+    <div class="modal-sub" id="auth-modal-sub">Log in with your email and password to manage your subscription.</div>
     <form id="auth-form">
-      <input type="email" id="auth-email" placeholder="E-Mail" autocomplete="email" required>
-      <input type="password" id="auth-password" placeholder="Passwort" autocomplete="current-password" minlength="8" required>
+      <input type="email" id="auth-email" placeholder="Email" autocomplete="email" required>
+      <input type="password" id="auth-password" placeholder="Password" autocomplete="current-password" minlength="8" required>
       <div class="modal-error" id="auth-error"></div>
-      <button type="submit" class="btn-primary" id="auth-submit-btn" style="width:100%;">Anmelden</button>
+      <button type="submit" class="btn-primary" id="auth-submit-btn" style="width:100%;">Log in</button>
     </form>
     <div class="modal-switch" id="auth-modal-switch"></div>
   </div>
@@ -803,46 +803,46 @@
 <!-- CONFIRMATION BANNER -->
 <div class="confirm-banner" id="confirm-banner">
   <span id="confirm-banner-text"></span>
-  <button type="button" id="manage-from-banner">Abo verwalten</button>
+  <button type="button" id="manage-from-banner">Manage subscription</button>
 </div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-badge">
     <div class="badge-dot"></div>
-    Der tägliche Krypto-Brief
+    The daily crypto brief
   </div>
   <h1 class="hero-title">
-    Der Markt schläft nicht.<br>
-    <em>Du musst es trotzdem.</em>
+    The market never sleeps.<br>
+    <em>You still have to.</em>
   </h1>
   <p class="hero-sub">
-    Jeden Morgen um 7 Uhr bekommst du die wichtigsten Bewegungen, Chancen und Geschichten aus dem Kryptomarkt – gefiltert, eingeordnet und auf den Punkt gebracht.
+    Every morning at 7am you get the most important moves, opportunities and stories from the crypto market – filtered, contextualized and straight to the point.
   </p>
   <div class="hero-cta-group">
-    <a href="#pricing" class="btn-primary">Daily Better abonnieren</a>
-    <a href="#preview" class="btn-primary" style="background:transparent;color:var(--black);border:1px solid var(--border);box-shadow:none;">Beispielausgabe ansehen</a>
+    <a href="#pricing" class="btn-primary">Subscribe to Daily Better</a>
+    <a href="#preview" class="btn-primary" style="background:transparent;color:var(--black);border:1px solid var(--border);box-shadow:none;">See a sample issue</a>
   </div>
-  <p class="btn-price" style="margin-top:24px;">Jeden Morgen um 7 Uhr · Jederzeit kündbar · Keine versteckten Gebühren</p>
+  <p class="btn-price" style="margin-top:24px;">Every morning at 7am · Cancel anytime · No hidden fees</p>
   <div class="hero-social-proof">
     <div class="proof-item">
       <span class="proof-num">07:00</span>
-      <span class="proof-label">Täglich</span>
+      <span class="proof-label">Daily</span>
     </div>
     <div class="proof-divider"></div>
     <div class="proof-item">
       <span class="proof-num">8</span>
-      <span class="proof-label">Module</span>
+      <span class="proof-label">Modules</span>
     </div>
     <div class="proof-divider"></div>
     <div class="proof-item">
-      <span class="proof-num">5 Min</span>
-      <span class="proof-label">Lesezeit</span>
+      <span class="proof-num">5 min</span>
+      <span class="proof-label">Read time</span>
     </div>
   </div>
 </section>
 
-<!-- TICKER: Newsletter-Module -->
+<!-- TICKER: newsletter modules -->
 <div class="ticker-section">
   <div class="ticker-track">
     <div class="ticker-item"><span class="ticker-val">Market Snapshot</span></div>
@@ -867,43 +867,43 @@
 
 <!-- PROBLEM -->
 <section class="features-section" style="text-align:center;padding-bottom:80px;">
-  <p class="section-label">Die Ausgangslage</p>
-  <h2 class="section-title">Krypto hat kein Informationsproblem.<br><em>Es hat ein Rauschproblem.</em></h2>
-  <p class="section-sub">Jeden Tag erscheinen Tausende Posts, Charts, Meinungen, Tweets, Videos und News. Das Problem ist nicht, Informationen zu finden. Das Problem ist zu wissen, welche davon tatsächlich zählen.</p>
+  <p class="section-label">The situation</p>
+  <h2 class="section-title">Crypto doesn't have an information problem.<br><em>It has a noise problem.</em></h2>
+  <p class="section-sub">Every day brings thousands of posts, charts, opinions, tweets, videos and headlines. The problem isn't finding information. The problem is knowing which of it actually matters.</p>
   <div class="features-grid" style="text-align:left;max-width:900px;margin:0 auto;">
-    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;">Zu viele News.</p></div>
-    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;">Zu viele Meinungen.</p></div>
-    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;">Zu viel Hype.</p></div>
-    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;">Zu wenig klare Einordnung.</p></div>
+    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;">Too much news.</p></div>
+    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;">Too many opinions.</p></div>
+    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;">Too much hype.</p></div>
+    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;">Too little clear context.</p></div>
   </div>
-  <p class="section-sub" style="margin-top:56px;margin-bottom:0;">Daily Better filtert das Rauschen. Du bekommst jeden Morgen nur das, was heute wirklich relevant sein könnte.</p>
+  <p class="section-sub" style="margin-top:56px;margin-bottom:0;">Daily Better filters the noise. Every morning you get only what could actually matter today.</p>
 </section>
 
 <!-- TRANSFORMATION -->
 <section class="features-section" style="text-align:center;">
   <div class="features-header">
-    <p class="section-label">Veränderung</p>
-    <h2 class="section-title">Weniger News. <em>Mehr Klarheit.</em></h2>
+    <p class="section-label">The shift</p>
+    <h2 class="section-title">Less news. <em>More clarity.</em></h2>
   </div>
   <div class="grid-2 features-grid" style="max-width:820px;margin:0 auto;">
     <div class="feature-card" style="background:#fff;border-color:var(--border);">
-      <div class="feature-title" style="color:#b0453d;">Vorher</div>
+      <div class="feature-title" style="color:#b0453d;">Before</div>
       <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:16px;">
-        <li class="feature-desc">Ich scrolle stundenlang durch Krypto-Feeds.</li>
-        <li class="feature-desc">Ich verpasse wichtige Bewegungen.</li>
-        <li class="feature-desc">Ich kann Hype nicht von echten Chancen unterscheiden.</li>
-        <li class="feature-desc">Ich verfolge zu viele Kanäle gleichzeitig.</li>
-        <li class="feature-desc">Ich treffe Entscheidungen aus dem Bauch heraus.</li>
+        <li class="feature-desc">I scroll through crypto feeds for hours.</li>
+        <li class="feature-desc">I miss important moves.</li>
+        <li class="feature-desc">I can't tell hype from real opportunities.</li>
+        <li class="feature-desc">I follow too many channels at once.</li>
+        <li class="feature-desc">I make decisions based on gut feeling.</li>
       </ul>
     </div>
     <div class="feature-card" style="background:var(--green-light);border-color:rgba(45,122,74,0.2);">
-      <div class="feature-title" style="color:var(--green);">Nachher</div>
+      <div class="feature-title" style="color:var(--green);">After</div>
       <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:16px;">
-        <li class="feature-desc" style="color:var(--black);">Jeden Morgen weiss ich, was zählt.</li>
-        <li class="feature-desc" style="color:var(--black);">Ich erkenne relevante Chancen früher.</li>
-        <li class="feature-desc" style="color:var(--black);">Ich unterscheide Fakt, Analyse und Meinung.</li>
-        <li class="feature-desc" style="color:var(--black);">Eine E-Mail statt zehn Kanäle.</li>
-        <li class="feature-desc" style="color:var(--black);">Ich bereite Entscheidungen strukturiert vor.</li>
+        <li class="feature-desc" style="color:var(--black);">Every morning I know what matters.</li>
+        <li class="feature-desc" style="color:var(--black);">I spot relevant opportunities earlier.</li>
+        <li class="feature-desc" style="color:var(--black);">I distinguish fact, analysis and opinion.</li>
+        <li class="feature-desc" style="color:var(--black);">One email instead of ten channels.</li>
+        <li class="feature-desc" style="color:var(--black);">I prepare decisions in a structured way.</li>
       </ul>
     </div>
   </div>
@@ -912,87 +912,87 @@
 <!-- VALUE STACK -->
 <section class="features-section">
   <div class="features-header">
-    <p class="section-label">Jede Ausgabe</p>
-    <h2 class="section-title">Alles, was heute zählt. <em>In einer E-Mail.</em></h2>
+    <p class="section-label">Every issue</p>
+    <h2 class="section-title">Everything that matters today. <em>In one email.</em></h2>
   </div>
   <div class="features-grid grid-4">
     <div class="feature-card">
       <div class="feature-icon">📊</div>
       <div class="feature-title">Market Snapshot</div>
-      <p class="feature-desc">Bitcoin. Ethereum. Marktstimmung. Die wichtigsten Bewegungen auf einen Blick.</p>
+      <p class="feature-desc">Bitcoin. Ethereum. Market sentiment. The most important moves at a glance.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">📰</div>
       <div class="feature-title">The Big Story</div>
-      <p class="feature-desc">Die eine Geschichte, die heute jeder Krypto-Anleger verstehen sollte.</p>
+      <p class="feature-desc">The one story every crypto investor should understand today.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">🎯</div>
       <div class="feature-title">The Opportunity</div>
-      <p class="feature-desc">Ein Coin, Projekt oder Setup, das heute besonders interessant sein könnte — mit klarer Einschätzung.</p>
+      <p class="feature-desc">A coin, project or setup that could be especially interesting today — with a clear verdict.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">💬</div>
       <div class="feature-title">What They Said</div>
-      <p class="feature-desc">Eine relevante Aussage eines CEOs, Investors oder Entwicklers — mit Kontext.</p>
+      <p class="feature-desc">A relevant statement from a CEO, investor or developer — with context.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">⚡</div>
       <div class="feature-title">Quick Hits</div>
-      <p class="feature-desc">Die weiteren Geschichten des Tages, kompakt zusammengefasst.</p>
+      <p class="feature-desc">The other stories of the day, summarized compactly.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">🗓️</div>
       <div class="feature-title">Watch Today</div>
-      <p class="feature-desc">Die Ereignisse, Daten und Termine, die den Markt heute bewegen könnten.</p>
+      <p class="feature-desc">The events, data and dates that could move the market today.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">⚠️</div>
       <div class="feature-title">Risk Radar</div>
-      <p class="feature-desc">Was du heute besser nicht übersehen solltest.</p>
+      <p class="feature-desc">What you'd better not overlook today.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">✓</div>
       <div class="feature-title">One Thing to Remember</div>
-      <p class="feature-desc">Der eine Gedanke, den du aus der heutigen Ausgabe mitnehmen solltest.</p>
+      <p class="feature-desc">The one thought to take away from today's issue.</p>
     </div>
   </div>
-  <p class="section-sub" style="margin-top:48px;">Kein endloser Feed. Kein zweistündiger Podcast. Eine klare Ausgabe.</p>
+  <p class="section-sub" style="margin-top:48px;">No endless feed. No two-hour podcast. One clear issue.</p>
   <div style="text-align:center;">
-    <a href="#pricing" class="btn-primary">Daily Better abonnieren</a>
+    <a href="#pricing" class="btn-primary">Subscribe to Daily Better</a>
   </div>
 </section>
 
 <!-- ROUTINE -->
 <section class="features-section" style="text-align:center;">
-  <p class="section-label">Deine Routine</p>
-  <h2 class="section-title">5 Minuten heute. <em>Klarheit für den Rest des Tages.</em></h2>
+  <p class="section-label">Your routine</p>
+  <h2 class="section-title">5 minutes today. <em>Clarity for the rest of your day.</em></h2>
   <div class="features-grid" style="max-width:760px;margin:56px auto 0;">
     <div class="feature-card">
       <div class="feature-title" style="font-family:'Geist Mono', monospace;color:var(--gray);font-size:13px;">06:59</div>
-      <p class="feature-desc" style="color:var(--black);margin-top:8px;">Der Markt hat die Nacht durchgehandelt.</p>
+      <p class="feature-desc" style="color:var(--black);margin-top:8px;">The market traded through the night.</p>
     </div>
     <div class="feature-card" style="background:var(--green-light);border-color:rgba(45,122,74,0.2);">
       <div class="feature-title" style="font-family:'Geist Mono', monospace;color:var(--green);font-size:13px;">07:00</div>
-      <p class="feature-desc" style="color:var(--black);margin-top:8px;">Daily Better landet in deinem Postfach.</p>
+      <p class="feature-desc" style="color:var(--black);margin-top:8px;">Daily Better lands in your inbox.</p>
     </div>
     <div class="feature-card">
       <div class="feature-title" style="font-family:'Geist Mono', monospace;color:var(--gray);font-size:13px;">07:03</div>
-      <p class="feature-desc" style="color:var(--black);margin-top:8px;">Du weisst, was zählt — bevor dein Tag beginnt.</p>
+      <p class="feature-desc" style="color:var(--black);margin-top:8px;">You know what matters — before your day begins.</p>
     </div>
   </div>
-  <p class="section-sub" style="margin-top:48px;margin-bottom:0;">Kein stundenlanges Scrollen. Kein Springen zwischen zehn Kanälen. Die wichtigsten Inhalte sind in wenigen Minuten erfassbar.</p>
+  <p class="section-sub" style="margin-top:48px;margin-bottom:0;">No hours of scrolling. No jumping between ten channels. The key content is easy to scan in a few minutes.</p>
 </section>
 
-<!-- PREVIEW / BEISPIELAUSGABE -->
+<!-- PREVIEW / SAMPLE ISSUE -->
 <section class="preview-section" id="preview">
-  <p class="section-label">Beispielausgabe</p>
-  <h2 class="section-title">Schau dir an, was morgen <em>in deinem Postfach stehen könnte.</em></h2>
-  <p class="section-sub">Betreffzeile, Kernaussagen, Artikel, Tipp, Fehler, Tagesaufgabe, ETF-Beispiel und Quellen — eine echte Ausgabe zum Thema Gebühren.</p>
+  <p class="section-label">Sample issue</p>
+  <h2 class="section-title">See what could be <em>in your inbox tomorrow.</em></h2>
+  <p class="section-sub">Subject line, Market Snapshot, the Big Story, an Opportunity with a clear verdict, quotes, events and sources — a real issue.</p>
 
   <div class="newsletter-preview">
     <div class="preview-topbar">
-      <span>Dienstag, 14. Juli 2026</span>
+      <span>Tuesday, July 14, 2026</span>
       <span class="live">● Live</span>
     </div>
     <div class="preview-header">
@@ -1002,8 +1002,8 @@
         <span style="color:#ddd;margin:0 4px;">·</span>
         <span class="preview-issue">The Big Story</span>
       </div>
-      <div class="preview-title">BlackRock macht etwas, das der Markt <em>nicht ignorieren sollte</em></div>
-      <p class="preview-intro">Bitcoin hält sich. Der interessante Move passiert heute aber woanders. Institutionelle Nachfrage nimmt seit mehreren Tagen spürbar zu.</p>
+      <div class="preview-title">BlackRock is doing something the market <em>shouldn't ignore</em></div>
+      <p class="preview-intro">Bitcoin is holding steady. The interesting move today is happening elsewhere. Institutional demand has been climbing noticeably for several days.</p>
     </div>
     <div class="preview-ticker">
       <div class="pt-item"><div class="pt-label">BTC</div><div class="pt-val green">↑ 24h</div></div>
@@ -1013,177 +1013,177 @@
     </div>
     <div class="preview-body">
       <div class="preview-section-label">The Opportunity</div>
-      <div class="preview-section-title">Ein konkreter Kandidat, klar eingeordnet</div>
-      <p class="preview-text">Asset, Verdict, The Chance, Why Now, The Case, The Risk, Bottom Line — jede Chance kommt mit einem klaren Gegenpunkt, nie ohne Risikoanalyse...</p>
+      <div class="preview-section-title">A concrete candidate, clearly assessed</div>
+      <p class="preview-text">Asset, Verdict, The Chance, Why Now, The Case, The Risk, Bottom Line — every opportunity comes with a clear counterpoint, never without a risk analysis...</p>
     </div>
     <div class="preview-blur">
-      <span class="preview-blur-text">Abonnieren für die vollständige Ausgabe</span>
+      <span class="preview-blur-text">Subscribe for the full issue</span>
     </div>
   </div>
   <div style="margin-top:40px;">
-    <a href="#pricing" class="btn-primary">Daily Better abonnieren</a>
-    <p class="section-sub" style="margin-top:24px;margin-bottom:0;">Genau so bekommst du jeden Morgen die wichtigsten Bewegungen des Kryptomarkts direkt per E-Mail.</p>
+    <a href="#pricing" class="btn-primary">Subscribe to Daily Better</a>
+    <p class="section-sub" style="margin-top:24px;margin-bottom:0;">This is exactly what lands in your inbox every morning — the most important crypto market moves, straight to your email.</p>
   </div>
 </section>
 
-<!-- INFORMATIONSVORSPRUNG -->
+<!-- THE EDGE -->
 <section class="features-section" style="text-align:center;">
   <div class="features-header">
-    <p class="section-label">Der Vorteil</p>
-    <h2 class="section-title">Im Kryptomarkt zählt nicht, alles zu wissen.<br><em>Es zählt, das Richtige früh genug zu verstehen.</em></h2>
+    <p class="section-label">The edge</p>
+    <h2 class="section-title">In crypto, knowing everything doesn't matter.<br><em>Understanding the right thing early enough does.</em></h2>
   </div>
   <div class="features-grid grid-4" style="text-align:left;">
     <div class="feature-card">
       <div class="feature-icon">🔍</div>
-      <div class="feature-title">Früher entdecken</div>
-      <p class="feature-desc">Relevante Entwicklungen schneller erkennen, statt sie im Feed zu verpassen.</p>
+      <div class="feature-title">Spot it earlier</div>
+      <p class="feature-desc">Recognize relevant developments faster instead of missing them in your feed.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">🧩</div>
-      <div class="feature-title">Strukturiert prüfen</div>
-      <p class="feature-desc">Chancen anhand von Katalysator, Case und Risiko einordnen — nicht nach Bauchgefühl.</p>
+      <div class="feature-title">Assess it properly</div>
+      <p class="feature-desc">Evaluate opportunities by catalyst, case and risk — not gut feeling.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">🎙️</div>
-      <div class="feature-title">Aussagen einordnen</div>
-      <p class="feature-desc">Schlagzeilen und Zitate wichtiger Marktteilnehmer in Kontext setzen.</p>
+      <div class="feature-title">Put quotes in context</div>
+      <p class="feature-desc">Put headlines and quotes from key market participants into context.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">⏱️</div>
-      <div class="feature-title">Zeit sparen</div>
-      <p class="feature-desc">Deinen eigenen Rechercheaufwand drastisch reduzieren.</p>
+      <div class="feature-title">Save time</div>
+      <p class="feature-desc">Drastically cut down your own research time.</p>
     </div>
   </div>
-  <p class="section-sub" style="margin-top:48px;margin-bottom:0;">Du bekommst nicht mehr Informationen. Du bekommst bessere Prioritäten.</p>
+  <p class="section-sub" style="margin-top:48px;margin-bottom:0;">You don't get more information. You get better priorities.</p>
 </section>
 
 <!-- PRICING -->
 <section class="pricing-section" id="pricing">
-  <p class="pricing-label">Abonnement</p>
-  <h2 class="pricing-title">Jeden Morgen <em>informiert.</em></h2>
+  <p class="pricing-label">Subscription</p>
+  <h2 class="pricing-title">Informed <em>every morning.</em></h2>
   <div class="pricing-card">
     <div class="pricing-amount"><sup>CHF</sup>4.90</div>
-    <div class="pricing-period">Pro Monat · Jederzeit kündbar</div>
+    <div class="pricing-period">Per month · Cancel anytime</div>
     <ul class="pricing-features">
-      <li>Tägliche E-Mail um 7 Uhr</li>
-      <li>Market Snapshot: BTC, ETH, Stimmung</li>
-      <li>The Big Story des Tages</li>
-      <li>Eine konkrete Opportunity mit Einschätzung</li>
-      <li>Relevante Aussagen eingeordnet</li>
+      <li>Daily email at 7am</li>
+      <li>Market Snapshot: BTC, ETH, sentiment</li>
+      <li>The Big Story of the day</li>
+      <li>One concrete opportunity with a verdict</li>
+      <li>Relevant statements in context</li>
       <li>Risk Radar & Watch Today</li>
-      <li>Jederzeit kündbar</li>
+      <li>Cancel anytime</li>
     </ul>
-    <button type="button" id="checkout-btn" class="btn-pricing">Jetzt Daily Better abonnieren</button>
-    <p class="pricing-note" id="pricing-note">Sichere Zahlung · Jederzeit kündbar · Keine versteckten Gebühren</p>
-    <p class="pricing-note" style="margin-top:8px;">Deine nächste Ausgabe erhältst du mit dem nächsten regulären Versand um 7 Uhr.</p>
+    <button type="button" id="checkout-btn" class="btn-pricing">Subscribe to Daily Better now</button>
+    <p class="pricing-note" id="pricing-note">Secure payment · Cancel anytime · No hidden fees</p>
+    <p class="pricing-note" style="margin-top:8px;">You'll receive your first issue with the next regular send at 7am.</p>
   </div>
 </section>
 
-<!-- VERTRAUEN & TRANSPARENZ -->
+<!-- TRUST & TRANSPARENCY -->
 <section class="features-section" style="text-align:center;">
   <div class="features-header">
-    <p class="section-label">Transparenz</p>
-    <h2 class="section-title">Keine Pumps. Keine Fantasie.<br><em>Keine garantierten Gewinne.</em></h2>
-    <p class="section-sub">Daily Better trennt Fakten, Analyse und Meinung. Eine Chance ohne Risikoanalyse ist keine Analyse.</p>
+    <p class="section-label">Transparency</p>
+    <h2 class="section-title">No pumps. No fantasy.<br><em>No guaranteed profits.</em></h2>
+    <p class="section-sub">Daily Better separates facts, analysis and opinion. An opportunity without a risk analysis isn't analysis.</p>
   </div>
   <div class="features-grid" style="text-align:left;margin-bottom:56px;max-width:900px;margin-left:auto;margin-right:auto;">
     <div class="feature-card">
       <div class="feature-title" style="color:var(--green);">FACT</div>
-      <p class="feature-desc" style="margin-top:8px;">Was tatsächlich passiert ist.</p>
+      <p class="feature-desc" style="margin-top:8px;">What actually happened.</p>
     </div>
     <div class="feature-card">
       <div class="feature-title">ANALYSIS</div>
-      <p class="feature-desc" style="margin-top:8px;">Warum es relevant sein könnte.</p>
+      <p class="feature-desc" style="margin-top:8px;">Why it could be relevant.</p>
     </div>
     <div class="feature-card">
       <div class="feature-title">OUR TAKE</div>
-      <p class="feature-desc" style="margin-top:8px;">Unsere klare redaktionelle Einschätzung.</p>
+      <p class="feature-desc" style="margin-top:8px;">Our clear editorial take.</p>
     </div>
   </div>
 
   <div class="features-header">
-    <p class="section-label">Prozess</p>
-    <h3 class="section-title" style="font-size:clamp(24px, 3vw, 34px);">So arbeitet <em>Daily Better</em></h3>
+    <p class="section-label">Process</p>
+    <h3 class="section-title" style="font-size:clamp(24px, 3vw, 34px);">How <em>Daily Better</em> works</h3>
   </div>
   <div class="features-grid" style="text-align:left;max-width:900px;margin:0 auto 40px;">
-    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;"><strong style="color:var(--green);">1.</strong> Aktuelle Marktinformationen werden recherchiert.</p></div>
-    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;"><strong style="color:var(--green);">2.</strong> Die wichtigsten Storys werden priorisiert.</p></div>
-    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;"><strong style="color:var(--green);">3.</strong> Daten und Quellen werden geprüft.</p></div>
-    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;"><strong style="color:var(--green);">4.</strong> Chancen und Risiken werden dargestellt.</p></div>
-    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;"><strong style="color:var(--green);">5.</strong> Du erhältst die Ausgabe morgens um 7 Uhr direkt per E-Mail.</p></div>
+    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;"><strong style="color:var(--green);">1.</strong> Current market information is researched.</p></div>
+    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;"><strong style="color:var(--green);">2.</strong> The most important stories are prioritized.</p></div>
+    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;"><strong style="color:var(--green);">3.</strong> Data and sources are verified.</p></div>
+    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;"><strong style="color:var(--green);">4.</strong> Opportunities and risks are laid out.</p></div>
+    <div class="feature-card"><p class="feature-desc" style="color:var(--black);font-size:14px;"><strong style="color:var(--green);">5.</strong> You receive the issue at 7am, straight to your inbox.</p></div>
   </div>
-  <p class="section-sub" style="max-width:600px;">Wenn es an einem Tag keinen überzeugenden Kaufkandidaten gibt, sagen wir genau das — statt jeden Tag eine Chance zu erzwingen.</p>
-  <p class="section-sub" style="margin-top:24px;margin-bottom:0;">Keine individuelle Anlageberatung · Keine garantierten Renditen · Keine versteckten Produktplatzierungen</p>
+  <p class="section-sub" style="max-width:600px;">If there's no convincing candidate on a given day, we say exactly that — instead of forcing an opportunity every day.</p>
+  <p class="section-sub" style="margin-top:24px;margin-bottom:0;">No individual investment advice · No guaranteed returns · No hidden product placements</p>
 </section>
 
 <!-- FAQ -->
 <section class="faq-section">
   <div class="faq-header">
     <p class="section-label">FAQ</p>
-    <h2 class="section-title">Häufige <em>Fragen</em></h2>
+    <h2 class="section-title">Frequently asked <em>questions</em></h2>
   </div>
   <div class="faq-item">
-    <div class="faq-q">Warum sollte ich für Krypto-News bezahlen?</div>
-    <p class="faq-a">Du bezahlst nicht dafür, dass Nachrichten existieren. Du bezahlst für Auswahl, Priorisierung, Einordnung und Zeitersparnis.</p>
+    <div class="faq-q">Why should I pay for crypto news?</div>
+    <p class="faq-a">You're not paying for news to exist. You're paying for selection, prioritization, context and time saved.</p>
   </div>
   <div class="faq-item">
-    <div class="faq-q">Ist Daily Better ein Trading-Signal-Service?</div>
-    <p class="faq-a">Nein. Daily Better liefert Marktinformationen, Analysen und redaktionelle Einschätzungen. Es gibt keine persönliche Anlageberatung.</p>
+    <div class="faq-q">Is Daily Better a trading signal service?</div>
+    <p class="faq-a">No. Daily Better provides market information, analysis and editorial assessments. There is no personal investment advice.</p>
   </div>
   <div class="faq-item">
-    <div class="faq-q">Sagt Daily Better, welche Coins interessant sind?</div>
-    <p class="faq-a">Ja. Daily Better kann konkrete Assets, Chancen und Risiken analysieren und eine klare redaktionelle Einschätzung geben. Die Entscheidung bleibt bei dir.</p>
+    <div class="faq-q">Does Daily Better tell me which coins are interesting?</div>
+    <p class="faq-a">Yes. Daily Better can analyze concrete assets, opportunities and risks and give a clear editorial verdict. The decision stays with you.</p>
   </div>
   <div class="faq-item">
-    <div class="faq-q">Wie lange dauert das Lesen?</div>
-    <p class="faq-a">Die wichtigsten Informationen sind in wenigen Minuten erfassbar.</p>
+    <div class="faq-q">How long does it take to read?</div>
+    <p class="faq-a">The key information can be scanned in just a few minutes.</p>
   </div>
   <div class="faq-item">
-    <div class="faq-q">Wie aktuell sind die Informationen?</div>
-    <p class="faq-a">Jede Ausgabe basiert auf den für den jeweiligen Versand relevanten und überprüften Informationen — recherchiert am Morgen des Versands.</p>
+    <div class="faq-q">How current is the information?</div>
+    <p class="faq-a">Every issue is based on the relevant, verified information for that day — researched the morning it's sent.</p>
   </div>
   <div class="faq-item">
-    <div class="faq-q">Was passiert, wenn es an einem Tag keine gute Kaufchance gibt?</div>
-    <p class="faq-a">Dann sagen wir genau das. Daily Better erfindet keine Chance, nur um jeden Tag einen Coin zu nennen.</p>
+    <div class="faq-q">What happens if there's no good buying opportunity on a given day?</div>
+    <p class="faq-a">Then we say exactly that. Daily Better doesn't invent an opportunity just to name a coin every day.</p>
   </div>
   <div class="faq-item">
-    <div class="faq-q">Wann wird der Newsletter verschickt?</div>
-    <p class="faq-a">Täglich um 7:00 Uhr Schweizer Zeit — automatisch angepasst an Sommer- und Winterzeit.</p>
+    <div class="faq-q">When is the newsletter sent?</div>
+    <p class="faq-a">Daily at 7:00am Swiss time — automatically adjusted for daylight saving time.</p>
   </div>
   <div class="faq-item">
-    <div class="faq-q">Kann ich jederzeit kündigen?</div>
-    <p class="faq-a">Ja, du kannst dein Abo jederzeit mit wenigen Klicks über dein Konto kündigen. Keine Mindestlaufzeit, keine Kündigungsfristen.</p>
+    <div class="faq-q">Can I cancel anytime?</div>
+    <p class="faq-a">Yes, you can cancel your subscription anytime in a few clicks through your account. No minimum term, no notice period.</p>
   </div>
   <div class="faq-item">
-    <div class="faq-q">Wie wird verhindert, dass sich Storys oder Coins wiederholen?</div>
-    <p class="faq-a">Jede Ausgabe wird vor dem Versand automatisch mit bisherigen Ausgaben abgeglichen, damit sich Storys, Opportunities und Formulierungen nicht wiederholen.</p>
+    <div class="faq-q">How do you avoid repeating stories or coins?</div>
+    <p class="faq-a">Every issue is automatically checked against past issues before sending, so stories, opportunities and wording don't repeat.</p>
   </div>
   <div class="faq-item">
-    <div class="faq-q">Kann ich eine Beispielausgabe ansehen?</div>
-    <p class="faq-a">Ja, weiter oben auf dieser Seite findest du eine reale Beispielausgabe.</p>
+    <div class="faq-q">Can I see a sample issue?</div>
+    <p class="faq-a">Yes, you'll find a real sample issue further up this page.</p>
   </div>
 </section>
 
-<!-- ABSCHLUSS -->
+<!-- CLOSING -->
 <section class="pricing-section" style="padding:100px 24px;">
-  <p class="pricing-label">Loslegen</p>
-  <h2 class="pricing-title" style="margin-bottom:16px;">Der Markt macht weiter.<br>Mit oder ohne dich.</h2>
-  <p style="color:var(--green-bright);font-size:18px;font-family:'Instrument Serif', serif;font-style:italic;margin-bottom:32px;">Sei morgen früh informiert.</p>
-  <p style="color:#999;font-size:15px;max-width:480px;margin:0 auto 40px;line-height:1.7;">Jeden Morgen die wichtigsten Bewegungen, Chancen und Risiken — bevor dein Tag beginnt.</p>
-  <a href="#pricing" class="btn-pricing" style="display:inline-block;width:auto;padding:16px 40px;text-decoration:none;">Daily Better abonnieren</a>
-  <p class="pricing-note" style="margin-top:20px;">Jeden Morgen um 7 Uhr · Klar eingeordnet · Jederzeit kündbar</p>
+  <p class="pricing-label">Get started</p>
+  <h2 class="pricing-title" style="margin-bottom:16px;">The market keeps moving.<br>With or without you.</h2>
+  <p style="color:var(--green-bright);font-size:18px;font-family:'Instrument Serif', serif;font-style:italic;margin-bottom:32px;">Be informed tomorrow morning.</p>
+  <p style="color:#999;font-size:15px;max-width:480px;margin:0 auto 40px;line-height:1.7;">The most important moves, opportunities and risks — every morning, before your day begins.</p>
+  <a href="#pricing" class="btn-pricing" style="display:inline-block;width:auto;padding:16px 40px;text-decoration:none;">Subscribe to Daily Better</a>
+  <p class="pricing-note" style="margin-top:20px;">Every morning at 7am · Clearly assessed · Cancel anytime</p>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <span class="footer-brand">Daily Better · 2026</span>
   <div class="footer-links">
-    <a href="/datenschutz.html">Datenschutz</a>
-    <a href="/impressum.html">Impressum</a>
-    <a href="mailto:dailybetter.db@gmail.com">Kontakt</a>
-    <button type="button" class="manage-link" id="manage-subscription-link">Abo verwalten / kündigen</button>
+    <a href="/datenschutz.html">Privacy</a>
+    <a href="/impressum.html">Imprint</a>
+    <a href="mailto:dailybetter.db@gmail.com">Contact</a>
+    <button type="button" class="manage-link" id="manage-subscription-link">Manage / cancel subscription</button>
   </div>
-  <span class="footer-disclaimer">Keine individuelle Anlageberatung · Krypto ist volatil</span>
+  <span class="footer-disclaimer">No individual investment advice · Crypto is volatile</span>
 </footer>
 
 <script type="module">
@@ -1198,7 +1198,7 @@
   async function startCheckout(button, email) {
     const original = button.textContent;
     button.disabled = true;
-    button.textContent = 'Einen Moment…';
+    button.textContent = 'One moment…';
     try {
       const res = await fetch('/api/create-checkout-session', {
         method: 'POST',
@@ -1206,11 +1206,11 @@
         body: JSON.stringify({ email })
       });
       const data = await res.json();
-      if (!res.ok || !data.url) throw new Error(data.error || 'Unbekannter Fehler');
+      if (!res.ok || !data.url) throw new Error(data.error || 'Unknown error');
       window.location.href = data.url;
     } catch (err) {
       console.error(err);
-      alert('Checkout konnte nicht gestartet werden. Bitte versuch es später erneut.');
+      alert('Could not start checkout. Please try again later.');
       button.disabled = false;
       button.textContent = original;
     }
@@ -1229,7 +1229,7 @@
   async function openPortal(payload, triggerButton) {
     const original = triggerButton.textContent;
     triggerButton.disabled = true;
-    triggerButton.textContent = 'Einen Moment…';
+    triggerButton.textContent = 'One moment…';
     try {
       const headers = { 'Content-Type': 'application/json' };
       if (!payload.sessionId) {
@@ -1243,11 +1243,11 @@
         body: JSON.stringify(payload)
       });
       const data = await res.json();
-      if (!res.ok || !data.url) throw new Error(data.error || 'Unbekannter Fehler');
+      if (!res.ok || !data.url) throw new Error(data.error || 'Unknown error');
       window.location.href = data.url;
     } catch (err) {
       console.error(err);
-      alert('Kundenportal konnte nicht geöffnet werden: ' + err.message);
+      alert('Could not open the customer portal: ' + err.message);
       triggerButton.disabled = false;
       triggerButton.textContent = original;
     }
@@ -1275,15 +1275,15 @@
     errorEl.textContent = '';
     document.getElementById('auth-form').reset();
     if (mode === 'signup') {
-      title.textContent = 'Konto erstellen';
-      sub.textContent = 'Wähle ein Passwort — damit kannst du dein Abo später jederzeit verwalten oder kündigen.';
-      submitBtn.textContent = 'Weiter zur Zahlung';
-      switchEl.innerHTML = 'Schon ein Konto? <button type="button" id="auth-switch-btn">Anmelden</button>';
+      title.textContent = 'Create your account';
+      sub.textContent = 'Choose a password — this lets you manage or cancel your subscription anytime.';
+      submitBtn.textContent = 'Continue to payment';
+      switchEl.innerHTML = 'Already have an account? <button type="button" id="auth-switch-btn">Log in</button>';
     } else {
-      title.textContent = 'Anmelden';
-      sub.textContent = 'Melde dich mit E-Mail und Passwort an, um dein Abo zu verwalten.';
-      submitBtn.textContent = 'Anmelden';
-      switchEl.innerHTML = 'Noch kein Konto? <button type="button" id="auth-switch-btn">Abo abschliessen</button>';
+      title.textContent = 'Log in';
+      sub.textContent = 'Log in with your email and password to manage your subscription.';
+      submitBtn.textContent = 'Log in';
+      switchEl.innerHTML = 'No account yet? <button type="button" id="auth-switch-btn">Subscribe</button>';
     }
     document.getElementById('auth-switch-btn').addEventListener('click', () => openAuthModal(mode === 'signup' ? 'login' : 'signup'));
     overlay.classList.add('show');
@@ -1316,7 +1316,7 @@
       }
     } catch (err) {
       errorEl.textContent = err.message === 'Invalid login credentials'
-        ? 'E-Mail oder Passwort falsch.'
+        ? 'Incorrect email or password.'
         : err.message;
     } finally {
       submitBtn.disabled = false;
@@ -1354,15 +1354,15 @@
   const sessionIdParam = params.get('session_id');
 
   if (params.get('checkout') === 'success') {
-    note.textContent = 'Willkommen bei Daily Better. Deine nächste Ausgabe kommt mit dem nächsten Versand um 7 Uhr.';
-    bannerText.textContent = '✓ Willkommen bei Daily Better — dein Abo ist aktiv.';
+    note.textContent = 'Welcome to Daily Better. Your next issue arrives with the next send at 7am.';
+    bannerText.textContent = '✓ Welcome to Daily Better — your subscription is active.';
     banner.classList.add('show');
     document.getElementById('manage-from-banner').addEventListener('click', (e) => {
       if (sessionIdParam) openPortal({ sessionId: sessionIdParam }, e.currentTarget);
     });
     if (!sessionIdParam) document.getElementById('manage-from-banner').style.display = 'none';
   } else if (params.get('checkout') === 'canceled') {
-    note.textContent = 'Checkout abgebrochen — du kannst es jederzeit erneut versuchen.';
+    note.textContent = 'Checkout canceled — you can try again anytime.';
   }
 </script>
 
