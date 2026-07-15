@@ -820,10 +820,10 @@
     Every morning at 7am you get the most important moves, opportunities and stories from the crypto market – filtered, contextualized and straight to the point.
   </p>
   <div class="hero-cta-group">
-    <a href="#pricing" class="btn-primary">Subscribe to Daily Better</a>
+    <a href="#pricing" class="btn-primary">Start your free trial</a>
     <a href="#preview" class="btn-primary" style="background:transparent;color:var(--black);border:1px solid var(--border);box-shadow:none;">See a sample issue</a>
   </div>
-  <p class="btn-price" style="margin-top:24px;">Every morning at 7am · Cancel anytime · No hidden fees</p>
+  <p class="btn-price" style="margin-top:24px;">7-day free trial · Cancel anytime · No hidden fees</p>
   <div class="hero-social-proof">
     <div class="proof-item">
       <span class="proof-num">07:00</span>
@@ -959,7 +959,7 @@
   </div>
   <p class="section-sub" style="margin-top:48px;">No endless feed. No two-hour podcast. One clear issue.</p>
   <div style="text-align:center;">
-    <a href="#pricing" class="btn-primary">Subscribe to Daily Better</a>
+    <a href="#pricing" class="btn-primary">Start your free trial</a>
   </div>
 </section>
 
@@ -1021,7 +1021,7 @@
     </div>
   </div>
   <div style="margin-top:40px;">
-    <a href="#pricing" class="btn-primary">Subscribe to Daily Better</a>
+    <a href="#pricing" class="btn-primary">Start your free trial</a>
     <p class="section-sub" style="margin-top:24px;margin-bottom:0;">This is exactly what lands in your inbox every morning — the most important crypto market moves, straight to your email.</p>
   </div>
 </section>
@@ -1062,9 +1062,11 @@
   <p class="pricing-label">Subscription</p>
   <h2 class="pricing-title">Informed <em>every morning.</em></h2>
   <div class="pricing-card">
+    <div style="display:inline-block;background:rgba(61,255,122,0.12);color:var(--green-bright);font-family:'Geist Mono', monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:20px;">7-day free trial</div>
     <div class="pricing-amount"><sup>CHF</sup>4.90</div>
-    <div class="pricing-period">Per month · Cancel anytime</div>
+    <div class="pricing-period">After your trial · per month · cancel anytime</div>
     <ul class="pricing-features">
+      <li>7 days free, then CHF 4.90/month</li>
       <li>Daily email at 7am</li>
       <li>Market Snapshot: BTC, ETH, sentiment</li>
       <li>The Big Story of the day</li>
@@ -1073,9 +1075,9 @@
       <li>Risk Radar & Watch Today</li>
       <li>Cancel anytime</li>
     </ul>
-    <button type="button" id="checkout-btn" class="btn-pricing">Subscribe to Daily Better now</button>
-    <p class="pricing-note" id="pricing-note">Secure payment · Cancel anytime · No hidden fees</p>
-    <p class="pricing-note" style="margin-top:8px;">You'll receive your first issue with the next regular send at 7am.</p>
+    <button type="button" id="checkout-btn" class="btn-pricing">Start your free trial</button>
+    <p class="pricing-note" id="pricing-note">No payment for 7 days · Cancel anytime · No hidden fees</p>
+    <p class="pricing-note" style="margin-top:8px;">Your trial starts today. You'll receive your first issue with the next regular send at 7am. We'll only charge CHF 4.90 after 7 days, unless you cancel.</p>
   </div>
 </section>
 
@@ -1170,8 +1172,8 @@
   <h2 class="pricing-title" style="margin-bottom:16px;">The market keeps moving.<br>With or without you.</h2>
   <p style="color:var(--green-bright);font-size:18px;font-family:'Instrument Serif', serif;font-style:italic;margin-bottom:32px;">Be informed tomorrow morning.</p>
   <p style="color:#999;font-size:15px;max-width:480px;margin:0 auto 40px;line-height:1.7;">The most important moves, opportunities and risks — every morning, before your day begins.</p>
-  <a href="#pricing" class="btn-pricing" style="display:inline-block;width:auto;padding:16px 40px;text-decoration:none;">Subscribe to Daily Better</a>
-  <p class="pricing-note" style="margin-top:20px;">Every morning at 7am · Clearly assessed · Cancel anytime</p>
+  <a href="#pricing" class="btn-pricing" style="display:inline-block;width:auto;padding:16px 40px;text-decoration:none;">Start your free trial</a>
+  <p class="pricing-note" style="margin-top:20px;">7 days free · Clearly assessed · Cancel anytime</p>
 </section>
 
 <!-- FOOTER -->
@@ -1354,8 +1356,8 @@
   const sessionIdParam = params.get('session_id');
 
   if (params.get('checkout') === 'success') {
-    note.textContent = 'Welcome to Daily Better. Your next issue arrives with the next send at 7am.';
-    bannerText.textContent = '✓ Welcome to Daily Better — your subscription is active.';
+    note.textContent = 'Welcome to Daily Better. Your 7-day free trial has started — your next issue arrives with the next send at 7am.';
+    bannerText.textContent = '✓ Your 7-day free trial has started.';
     banner.classList.add('show');
     document.getElementById('manage-from-banner').addEventListener('click', (e) => {
       if (sessionIdParam) openPortal({ sessionId: sessionIdParam }, e.currentTarget);
